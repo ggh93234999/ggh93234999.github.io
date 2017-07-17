@@ -1,0 +1,151 @@
+body, div, h1, h2, h3, h4, p, ul, li {
+	margin:0;
+	padding:0;
+}
+html, body{
+	font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+body{
+	background-color: #FFF;
+}
+div{
+	display: block;
+}
+div #wrapper{
+	position: relative; 
+	min-height: 100%; 
+	top: 0px;
+	background-color: #AAAAAA;
+}
+div #header{	
+	z-index: 3;
+	position : relative;
+	top:0px;
+	min-width : 100%;
+	min-height : 68px;
+	overflow: hidden;
+	background-color: white;
+}	
+div #main_navi{
+	position:relative;
+	z-index: 4;
+	min-width : 100%;
+	min-height : 55px;
+	background-color: #4CAF50;
+}	
+div #main{
+	margin-left: 230px;
+	display:block;
+}
+div #side_navi{
+	position : absolute;
+	z-index: 3;
+	left : 0px;
+	top : 125px;
+	height: 100%;
+	width : 230px;
+	background-color: #fff;
+}	
+div .content{
+	padding: 5px;
+	clear :both;
+	display:table;
+	width : 100%;
+	min-height : 60px;
+	
+}	
+div .content_grey{
+	color : black;
+	background-color: #f1f1f1;
+}
+div .content_white{
+	color : black;
+	background-color: #fff;
+}
+
+div .main_right{
+	float : right;
+	top:125px;
+	width : 21%;
+	right:0px;
+	background-color: yellow;
+}	
+
+div .footer{
+	text-align:center;
+    color : white;
+    height: 100px;
+    font-size:50px;
+	background-color: #616161;
+}	
+.navi_botton{
+	text-decoration:none;
+	padding: 8px 20px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	vertical-align: middle;
+	cursor: pointer;
+	font-size: 20px;
+    float: left;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+	color:white;
+}
+.navi_botton:hover{
+	cursor: pointer;
+	background-color: white;
+	color:black;
+}
+.navi_word{
+	text-decoration:none;
+	padding: 8px 20px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	vertical-align: middle;
+	font-size: 20px;
+    float: left;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+	color:white;
+	-ms-user-select:none;
+}
+#mainNavi1{
+	position: absolute;
+	display:none;
+	width: 100%;
+	background-color: #f1f1f1;
+	padding-bottom: 40px;
+	z-index: 99;
+	font-size: 50px;
+}
+.side_word{
+	text-decoration:none;
+	padding: 8px 20px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	vertical-align: middle;
+	font-size: 20px;
+    float: left;
+    width: 190px;
+    border: none;
+    outline: none;
+    display: block;
+	color:black;
+	-ms-user-select:none;
+}
+
+.side_botton:hover{
+	cursor: pointer;
+	background-color: #f1f1f1;
+	color:black;
+}
+
+.shadow{
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 	rgba(0,0,0,0.12);
+}
