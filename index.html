@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>practice</title>
-	<link rel="stylesheet" type="text/css" href="myCSS.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="myJS.js"></script>
-</head>
-<body>
-	<div id = "wrapper">
-		<div id = "header">
-			<p>header</p>
-			
-		</div>
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-		<div id = "main_navi">
-			<a class = "navi_word"><b>Main Navi</b></a>
-			<a class = "navi_word navi_botton" id = "mainNaviBotton1">go google</a>
-			<a class = "navi_word navi_botton" id = "mainNaviBotton1">go google2</a>
-			
-		</div>
-		<div id = "mainNavi1">
-			<p>hello world I am main_navi</p>
-		</div>
-<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-		<div id = "side_navi">
-			<a class ="side_word"><b>Side Navi</b></a>
-			<a class = "side_word side_botton" >go google</a>
-			<a class = "side_word side_botton">go google2</a>
-		</div>
-		<div id = "main">
-			
-			<div class = "content">
-				<p>content</p>
-				<p>content</p>
-				<p>content</p>
-			</div>
-			<div class = "content">
-				<p>conte2nt</p>
-				<p>conten22t</p>
-				<p>content222</p>
-			</div>
-			<div class = "content">
-				<p>content</p>
-				<p>content</p>
-				<p>content</p>
-			</div>
-			<div class = "content">
-				<p>conte2nt</p>
-				<p>conten22t</p>
-				<p>content222</p>
-			</div>
-			
-			<div class = "footer">
-				<p>footer QAQ</p>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Custom Marker Symbols</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
 
-			</div>
-		</div>
-	</div>
-</body>
+    <div id="map"></div>
+    <script>
+      // This example uses SVG path notation to add a vector-based symbol
+      // as the icon for a marker. The resulting icon is a star-shaped symbol
+      // with a pale yellow fill and a thick yellow border.
+      let la, lb;
+      function success(position) {
+        la = position.coords.latitude;
+        lb = position.coords.longitude;
+        console.log("la="+la+" lb="+lb+"success");
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: la, lng: lb}
+
+        });
+
+        var goldStar = {
+          path: 'M0 0 L10 10 z',
+          fillColor: 'yellow',
+          fillOpacity: 0.8,
+          scale: 0.05,
+          strokeColor: 'gold',
+          strokeWeight: 14
+        };
+
+        var marker = new google.maps.Marker({
+          position: map.getCenter(),
+          icon: goldStar,
+          map: map
+        });
+      }
+      function error() {
+        console.log("Unable to retrieve your location");
+      }
+      function initMap() {
+        navigator.geolocation.getCurrentPosition(success, error);
+        
+        
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZOziLHZBZWrSgN5NEd4eUL7GUazsRh5s&callback=initMap">
+    </script>
+
+  </body>
 </html>
